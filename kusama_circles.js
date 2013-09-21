@@ -48,8 +48,9 @@ function sketchProc($p){
 
   var r = 0;
   var circles =  new $p.ArrayList();
-  var width =1200;
-  var height =  1000;
+  var width =1920;
+  var MAXRAD = 1000;
+  var height =  1080;
   var grow_inc = 2;
 
   var c_temp = 0;
@@ -74,9 +75,9 @@ function sketchProc($p){
     }
 
     if ($p.__mousePressed == true) {
-
       growCircle();  
     }
+
   }
 
   function addCircle(){
@@ -88,8 +89,6 @@ function sketchProc($p){
       socket.emit("complete-circle", {data: circle_vars}); 
       r=0;
       c_temp = Math.floor($p.random(360));
-
-
     }
     $p.__mousePressed=false;
   }
@@ -97,8 +96,12 @@ function sketchProc($p){
   function growCircle(){
     $p.fill(c_temp, 100,100);
     $p.ellipse($p.mouseX, $p.mouseY, r, r);
-    r=r+2;
+    r=r+grow_inc;
     $p.__mousePressed = true;
+
+    if(r>MAXRAD){
+       $p.__mousePressed = false;
+    }
   }
 
   socket.on('add-circle', function(data){
@@ -106,6 +109,9 @@ function sketchProc($p){
       var new_circle =  new Circle(c_data['x'], c_data['y'], c_data['r'], c_data['c'], true);
       circles.add(new_circle);
       });
+ socket.on('disconnect',function(){
+    $p.__mousePressed=false;
+     });
 
   $p.draw = draw;
 
@@ -122,6 +128,7 @@ var $pinstance;
 $(document).ready(function(){
     canvas = document.getElementById("kusama_circles");
     $pinstance = new Processing(canvas, sketchProc);
+    alert("Press the canvas to grow a circle. When you let go, it broadcasts to other computers on the site right now.  Share the URL, let's make a crazy colorful circle mural! \n\n <3 whichlight"); 
     });
 
 //for mobile
@@ -129,7 +136,6 @@ function preventBehavior(e) {
   e.preventDefault(); 
 };
 
-document.addEventListener("touchmove", preventBehavior, false);
 
 
 

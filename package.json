@@ -27,5 +27,9 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/whichlight/bubblegum-postcard/issues"
+  },
+  "subdomain": "bubblegum-postcard",
+  "engines": {
+    "node": "0.10.x"
   }
 }

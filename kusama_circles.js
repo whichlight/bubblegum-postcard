@@ -128,7 +128,7 @@ var $pinstance;
 $(document).ready(function(){
     canvas = document.getElementById("kusama_circles");
     $pinstance = new Processing(canvas, sketchProc);
-    alert("Press the canvas to grow a circle. When you let go, it broadcasts to other computers on the site right now.  Share the URL, let's make a crazy colorful circle mural! \n\n <3 whichlight"); 
+    alert("Press the canvas to grow a circle. When you let go, it broadcasts to other computers on the site right now.  Share the URL, let's make a crazy colorful circle mural! \n\n <3 whichlight \n\n www.whichlight.com"); 
     });
 
 //for mobile

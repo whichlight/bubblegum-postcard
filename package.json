@@ -1,0 +1,31 @@
+{
+  "name": "bubblegum-postcard",
+  "version": "0.0.0",
+  "description": "drawing and sending colored circles on a canvas, collaborative art",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "~0.9.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/whichlight/bubblegum-postcard.git"
+  },
+  "keywords": [
+    "art",
+    "collaborative",
+    "interactive",
+    "projection",
+    "canvas",
+    "processingjs"
+  ],
+  "author": "whichlight",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/whichlight/bubblegum-postcard/issues"
+  }
+}

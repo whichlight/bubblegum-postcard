@@ -1,5 +1,5 @@
 
-var socket = io.connect('http://192.168.1.30:8080');
+var socket = io.connect('http://localhost:8080');
 
 
 function sketchProc($p){

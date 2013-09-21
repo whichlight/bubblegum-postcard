@@ -1,6 +1,5 @@
 
-var socket = io.connect('http://localhost:8080');
-
+var socket = io.connect('http://'+window.location.hostname);
 
 function sketchProc($p){
   var Circle = (function() {
@@ -67,7 +66,7 @@ function sketchProc($p){
 
     if ($p.__mousePressed==false) {
       addCircle();
-          }
+    }
 
     for (var i = 0;  i<circles.size();  i++) {
       var c =   circles.get(i);
@@ -76,13 +75,13 @@ function sketchProc($p){
 
     if ($p.__mousePressed == true) {
 
-	growCircle();  
+      growCircle();  
     }
   }
 
   function addCircle(){
     if(r!=0){
-     var c =  new Circle($p.mouseX, $p.mouseY, r, c_temp, false);
+      var c =  new Circle($p.mouseX, $p.mouseY, r, c_temp, false);
       circles.add(c);
       //send circle
       var circle_vars = {'x': $p.mouseX, 'y' : $p.mouseY, 'r': r, 'c' : c_temp}
@@ -92,14 +91,14 @@ function sketchProc($p){
 
 
     }
-   $p.__mousePressed=false;
+    $p.__mousePressed=false;
   }
 
   function growCircle(){
-     $p.fill(c_temp, 100,100);
-      $p.ellipse($p.mouseX, $p.mouseY, r, r);
-      r=r+2;
-     $p.__mousePressed = true;
+    $p.fill(c_temp, 100,100);
+    $p.ellipse($p.mouseX, $p.mouseY, r, r);
+    r=r+2;
+    $p.__mousePressed = true;
   }
 
   socket.on('add-circle', function(data){
@@ -110,21 +109,27 @@ function sketchProc($p){
 
   $p.draw = draw;
 
-canvas.addEventListener("touchmove", preventBehavior, false);
-canvas.addEventListener("touchstart", growCircle(), false);
-canvas.addEventListener("touchend", addCircle(), false);
+  canvas.addEventListener("touchmove", preventBehavior, false);
+  canvas.addEventListener("touchstart", growCircle(), false);
+  canvas.addEventListener("touchend", addCircle(), false);
 
 
 }
 
-var canvas = document.getElementById("kusama_circles");
-$pinstance = new Processing(canvas, sketchProc);
+var canvas;
+var $pinstance;
+
+$(document).ready(function(){
+    canvas = document.getElementById("kusama_circles");
+    $pinstance = new Processing(canvas, sketchProc);
+    });
 
 //for mobile
 function preventBehavior(e) {
-      e.preventDefault(); 
+  e.preventDefault(); 
 };
 
 document.addEventListener("touchmove", preventBehavior, false);
+
 
 

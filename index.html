@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <title>kusama circles</title>
+  </head>
+
+  <script src="libs/processing-1.4.1.min.js"></script>
+
+  <script src="libs/jquery-latest.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <style type="text/css">
+
+    #happy {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+      "Helvetica Neue", sans-serif;
+      font-weight: 300;
+      color: #CC00FF;
+      font-size: 15px;
+      border: thin;
+    }
+
+    body{
+      overflow: hidden;
+      -webkit-user-select : none;
+      -moz-user-select : none;
+      background-color:black;
+    }
+    canvas{
+      border:none;
+      padding:0;
+      margin:0;
+      background-color:white;
+    }
+
+  </style>
+
+  <body>
+    <canvas id="kusama_circles" width="1200" height="1000"></canvas>
+    <script type="text/javascript" src="kusama_circles.js"></script>
+
+    <!-- Google Analytics for WordPress | http://yoast.com/wordpress/google-analytics/ -->
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+	var pageTracker = _gat._getTracker("UA-11846710-1");
+	// Cookied already: 
+	pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+    <!-- End of Google Analytics code -->
+  </body>
+</html>

@@ -1,6 +1,6 @@
 {
   "name": "bubblegum-postcard",
-  "version": "0.0.0-3",
+  "version": "0.0.0-5",
   "description": "drawing and sending colored circles on a canvas, collaborative art",
   "main": "server.js",
   "dependencies": {
@@ -29,10 +29,10 @@
     "url": "https://github.com/whichlight/bubblegum-postcard/issues"
   },
   "subdomain": "bubblegum-postcard",
-  "domains" : [
+  "domains": [
     "prettydots.com",
     "www.prettydots.com"
-    ],
+  ],
   "engines": {
     "node": "0.10.x"
   }

@@ -75,7 +75,7 @@ function sketchProc($p){
     }
 
     if ($p.__mousePressed == true) {
-      growCircle();  
+      growCircle();
     }
 
   }
@@ -86,7 +86,7 @@ function sketchProc($p){
       circles.add(c);
       //send circle
       var circle_vars = {'x': $p.mouseX, 'y' : $p.mouseY, 'r': r, 'c' : c_temp}
-      socket.emit("complete-circle", {data: circle_vars}); 
+      socket.emit("complete-circle", {data: circle_vars});
       r=0;
       c_temp = Math.floor($p.random(360));
     }
@@ -128,12 +128,12 @@ var $pinstance;
 $(document).ready(function(){
     canvas = document.getElementById("kusama_circles");
     $pinstance = new Processing(canvas, sketchProc);
-    alert("Press the canvas to grow a circle. When you let go, it broadcasts to other computers on the site right now.  Share the URL, let's make a crazy colorful circle mural! \n\n <3 whichlight \n\n www.whichlight.com"); 
+    alert("Press the canvas to grow a circle. When you let go, it broadcasts to other computers on the site right now.  Share the URL, let's make a crazy colorful circle mural! \n\n <3 @whichlight");
     });
 
 //for mobile
 function preventBehavior(e) {
-  e.preventDefault(); 
+  e.preventDefault();
 };
 
 

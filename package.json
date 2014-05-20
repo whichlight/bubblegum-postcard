@@ -29,6 +29,10 @@
     "url": "https://github.com/whichlight/bubblegum-postcard/issues"
   },
   "subdomain": "bubblegum-postcard",
+  "domains" : [
+    "prettydots.com",
+    "www.prettydots.com"
+    ],
   "engines": {
     "node": "0.10.x"
   }

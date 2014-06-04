@@ -1,6 +1,6 @@
 {
   "name": "bubblegum-postcard",
-  "version": "0.0.0-5",
+  "version": "0.0.0-6",
   "description": "drawing and sending colored circles on a canvas, collaborative art",
   "main": "server.js",
   "dependencies": {
